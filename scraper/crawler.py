@@ -145,11 +145,24 @@ class Crawler:
             finally:
                 self.storage.save_checkpoint(visited, list(queue))
 
-        self.storage.export_aggregate(self.documents)
-        logger.success(
-            f"Completed profile '{self.profile.name}' | Visited={self.stats['pages_visited']} "
-            f"Scraped={self.stats['docs_scraped']} Errors={self.stats['errors']}"
-        )
+        sync_stats = self.storage.export_aggregate(self.documents)
+        if self.settings.sync_mode:
+            added = sync_stats.get("added", 0) if isinstance(sync_stats, dict) else 0
+            updated = sync_stats.get("updated", 0) if isinstance(sync_stats, dict) else 0
+            deleted = sync_stats.get("deleted", 0) if isinstance(sync_stats, dict) else 0
+            unchanged = sync_stats.get("unchanged", 0) if isinstance(sync_stats, dict) else 0
+            missing_identity_current = sync_stats.get("missing_identity_current", 0) if isinstance(sync_stats, dict) else 0
+            logger.success(
+                f"Completed profile '{self.profile.name}' | Visited={self.stats['pages_visited']} "
+                f"Scraped={self.stats['docs_scraped']} Errors={self.stats['errors']} "
+                f"Added={added} Updated={updated} Deleted={deleted} Unchanged={unchanged} "
+                f"MissingIdentityCurrent={missing_identity_current}"
+            )
+        else:
+            logger.success(
+                f"Completed profile '{self.profile.name}' | Visited={self.stats['pages_visited']} "
+                f"Scraped={self.stats['docs_scraped']} Errors={self.stats['errors']}"
+            )
         if self.browser_client:
             self.browser_client.close()
         return self.documents

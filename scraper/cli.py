@@ -21,8 +21,10 @@ def build_runtime_settings(args: argparse.Namespace) -> RuntimeSettings:
         output_dir=args.output_dir,
         output_format=args.output_format,
         resume=not args.no_resume,
+        sync_mode=args.sync,
         timeout_seconds=args.timeout,
     )
+
 
 
 def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
@@ -32,7 +34,9 @@ def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
     parser.add_argument("--output-format", choices=["json", "jsonl"], default="jsonl")
     parser.add_argument("--timeout", type=int, default=20)
     parser.add_argument("--no-resume", action="store_true")
+    parser.add_argument("--sync", action="store_true", help="Reconcile output by adding new records, updating changed ones, and removing missing ones")
     return parser.parse_args(argv)
+
 
 
 def main(argv: Optional[list[str]] = None) -> int:

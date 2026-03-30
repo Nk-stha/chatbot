@@ -1,4 +1,4 @@
-from scraper.config import ScraperProfile
+from scraper.config import RuntimeSettings, ScraperProfile
 
 
 def test_profile_defaults_allowed_domain():
@@ -23,3 +23,8 @@ def test_selector_list_normalizes_single_value():
         }
     )
     assert profile.selector_list("title") == ["h1"]
+
+
+def test_runtime_settings_support_sync_mode(tmp_path):
+    settings = RuntimeSettings(output_dir=tmp_path, sync_mode=True)
+    assert settings.sync_mode is True

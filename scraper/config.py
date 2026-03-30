@@ -85,6 +85,7 @@ class RuntimeSettings(BaseModel):
     save_errors: bool = True
     save_checkpoint: bool = True
     resume: bool = True
+    sync_mode: bool = False
     concurrency: int = 5
     timeout_seconds: int = 20
     user_agent: str = (
