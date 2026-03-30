@@ -1,0 +1,76 @@
+{
+  "name": "entrancegateway_colleges",
+  "base_url": "https://entrancegateway.com/",
+  "start_urls": [
+    "https://entrancegateway.com/colleges?page=1"
+  ],
+  "doc_type": "college",
+  "metadata_fields": [
+    "college_name",
+    "location",
+    "affiliation",
+    "course_name",
+    "course_count",
+    "description"
+  ],
+  "selectors": {
+    "list_links": [
+      "[data-role='college-link']",
+      "[data-role='college-item']"
+    ],
+    "title": [
+      "[data-role='page-title']",
+      "[data-role='college-name']",
+      "title"
+    ],
+    "content": [
+      "[data-role='page-content']"
+    ],
+    "college_name": [
+      "[data-role='college-name']",
+      "[data-role='meta-college-info']"
+    ],
+    "location": [
+      "[data-role='location']",
+      "[data-role='meta-college-info']"
+    ],
+    "affiliation": [
+      "[data-role='affiliation']",
+      "[data-role='meta-college-info']"
+    ],
+    "course_name": [
+      "[data-role='course-name']",
+      "[data-role='meta-college-info']"
+    ],
+    "course_count": [
+      "[data-role='course-count']",
+      "[data-role='meta-college-info']"
+    ],
+    "description": [
+      "[data-role='description']",
+      "[data-role='college-description']",
+      "[data-role='meta-college-info']"
+    ]
+  },
+  "pagination_selector": [
+    "[data-role='next-link']"
+  ],
+  "allowed_domains": [
+    "entrancegateway.com"
+  ],
+  "detail_url_keywords": [
+    "/colleges/"
+  ],
+  "include_patterns": [
+    "https://entrancegateway\\.com/colleges"
+  ],
+  "exclude_patterns": [
+    "/signin",
+    "/signup"
+  ],
+  "render_mode": "http",
+  "max_pages": null,
+  "max_depth": 3,
+  "request_delay_seconds": 0.4,
+  "tailwind_optimized": true
+}

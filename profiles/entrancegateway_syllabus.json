@@ -1,0 +1,84 @@
+{
+  "name": "entrancegateway_syllabus",
+  "base_url": "https://entrancegateway.com/",
+  "start_urls": [
+    "https://entrancegateway.com/syllabus?page=1"
+  ],
+  "doc_type": "syllabus",
+  "metadata_fields": [
+    "course_name",
+    "course_code",
+    "semester",
+    "year",
+    "subject_name",
+    "credit_hours",
+    "program"
+  ],
+  "selectors": {
+    "list_links": [
+      "[data-role='syllabus-link']",
+      "[data-role='semester-item']",
+      "[data-role='course-item']"
+    ],
+    "title": [
+      "[data-role='page-title']",
+      "[data-role='subject-name']",
+      "[data-role='course-name']",
+      "title"
+    ],
+    "content": [
+      "[data-role='page-content']"
+    ],
+    "course_name": [
+      "[data-role='course-name']",
+      "[data-role='meta-subject-info']"
+    ],
+    "course_code": [
+      "[data-role='course-code']",
+      "[data-role='meta-subject-info']"
+    ],
+    "semester": [
+      "[data-role='semester']",
+      "[data-role='semester-name']",
+      "[data-role='meta-subject-info']"
+    ],
+    "year": [
+      "[data-role='year']",
+      "[data-role='meta-subject-info']"
+    ],
+    "subject_name": [
+      "[data-role='subject-name']",
+      "[data-role='meta-subject-info']"
+    ],
+    "credit_hours": [
+      "[data-role='credit-hours']",
+      "[data-role='meta-subject-info']"
+    ],
+    "program": [
+      "[data-role='program']",
+      "[data-role='affiliation']",
+      "[data-role='meta-subject-info']"
+    ]
+  },
+  "pagination_selector": [
+    "[data-role='next-link']"
+  ],
+  "allowed_domains": [
+    "entrancegateway.com"
+  ],
+  "detail_url_keywords": [
+    "/syllabus/"
+  ],
+  "include_patterns": [
+    "https://entrancegateway\\.com/syllabus"
+  ],
+  "exclude_patterns": [
+    "/signin",
+    "/signup"
+  ],
+  "render_mode": "http",
+  "max_pages": null,
+  "max_depth": 3,
+  "request_delay_seconds": 0.4,
+  "tailwind_optimized": true
+}

@@ -1,0 +1,71 @@
+{
+  "name": "entrancegateway_questions",
+  "base_url": "https://entrancegateway.com/",
+  "start_urls": [
+    "https://entrancegateway.com/questions?page=1"
+  ],
+  "doc_type": "question",
+  "metadata_fields": [
+    "subject_name",
+    "year",
+    "course_name",
+    "affiliation",
+    "description"
+  ],
+  "selectors": {
+    "list_links": [
+      "[data-role='question-link']",
+      "[data-role='question-item']",
+      "[data-role='question-row']"
+    ],
+    "title": [
+      "[data-role='page-title']",
+      "[data-role='question-title']",
+      "title"
+    ],
+    "content": [
+      "[data-role='page-content']"
+    ],
+    "subject_name": [
+      "[data-role='subject-name']",
+      "[data-role='meta-question-info']"
+    ],
+    "year": [
+      "[data-role='year']",
+      "[data-role='meta-question-info']"
+    ],
+    "course_name": [
+      "[data-role='course-name']",
+      "[data-role='meta-question-info']"
+    ],
+    "affiliation": [
+      "[data-role='affiliation']",
+      "[data-role='meta-question-info']"
+    ],
+    "description": [
+      "[data-role='description']",
+      "[data-role='meta-question-info']"
+    ]
+  },
+  "pagination_selector": [
+    "[data-role='next-link']"
+  ],
+  "allowed_domains": [
+    "entrancegateway.com"
+  ],
+  "detail_url_keywords": [
+    "/questions/"
+  ],
+  "include_patterns": [
+    "https://entrancegateway\\.com/questions"
+  ],
+  "exclude_patterns": [
+    "/signin",
+    "/signup"
+  ],
+  "render_mode": "http",
+  "max_pages": null,
+  "max_depth": 3,
+  "request_delay_seconds": 0.4,
+  "tailwind_optimized": true
+}

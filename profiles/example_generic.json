@@ -1,0 +1,48 @@
+{
+  "name": "generic_example",
+  "base_url": "https://example.com/",
+  "start_urls": [
+    "https://example.com/articles"
+  ],
+  "doc_type": "article",
+  "metadata_fields": [
+    "author",
+    "published_at"
+  ],
+  "selectors": {
+    "list_links": [
+      "a.article-link",
+      "article a[href]"
+    ],
+    "title": [
+      "h1",
+      "title"
+    ],
+    "content": [
+      "main article",
+      "article",
+      "main"
+    ],
+    "author": [
+      ".author",
+      "[rel='author']"
+    ],
+    "published_at": [
+      "time[datetime]"
+    ]
+  },
+  "pagination_selector": [
+    "a[rel='next']",
+    ".pagination-next a"
+  ],
+  "allowed_domains": [
+    "example.com"
+  ],
+  "detail_url_keywords": [
+    "/articles/"
+  ],
+  "render_mode": "auto",
+  "max_pages": 100,
+  "max_depth": 3,
+  "request_delay_seconds": 0.5
+}

@@ -1,0 +1,76 @@
+{
+  "name": "entrancegateway_courses",
+  "base_url": "https://entrancegateway.com/",
+  "start_urls": [
+    "https://entrancegateway.com/courses?page=1"
+  ],
+  "doc_type": "course",
+  "metadata_fields": [
+    "course_name",
+    "affiliation",
+    "description",
+    "course_level",
+    "course_type",
+    "college_count"
+  ],
+  "selectors": {
+    "list_links": [
+      "[data-role='course-item']",
+      "[data-role='course-name']"
+    ],
+    "title": [
+      "[data-role='page-title']",
+      "[data-role='course-name']",
+      "title"
+    ],
+    "content": [
+      "[data-role='page-content']"
+    ],
+    "course_name": [
+      "[data-role='course-name']",
+      "[data-role='meta-course-info']"
+    ],
+    "affiliation": [
+      "[data-role='affiliation']",
+      "[data-role='meta-course-info']"
+    ],
+    "description": [
+      "[data-role='description']",
+      "[data-role='course-description']",
+      "[data-role='meta-course-info']"
+    ],
+    "course_level": [
+      "[data-role='course-level']",
+      "[data-role='meta-course-info']"
+    ],
+    "course_type": [
+      "[data-role='course-type']",
+      "[data-role='meta-course-info']"
+    ],
+    "college_count": [
+      "[data-role='college-count']",
+      "[data-role='meta-course-info']"
+    ]
+  },
+  "pagination_selector": [
+    "[data-role='next-link']"
+  ],
+  "allowed_domains": [
+    "entrancegateway.com"
+  ],
+  "detail_url_keywords": [
+    "/courses/"
+  ],
+  "include_patterns": [
+    "https://entrancegateway\\.com/courses"
+  ],
+  "exclude_patterns": [
+    "/signin",
+    "/signup"
+  ],
+  "render_mode": "http",
+  "max_pages": null,
+  "max_depth": 3,
+  "request_delay_seconds": 0.4,
+  "tailwind_optimized": true
+}

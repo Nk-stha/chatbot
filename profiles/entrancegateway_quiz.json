@@ -1,0 +1,70 @@
+{
+  "name": "entrancegateway_quiz",
+  "base_url": "https://entrancegateway.com/",
+  "start_urls": [
+    "https://entrancegateway.com/quiz?page=1"
+  ],
+  "doc_type": "quiz",
+  "metadata_fields": [
+    "course_name",
+    "question_count",
+    "duration",
+    "price",
+    "description"
+  ],
+  "selectors": {
+    "list_links": [
+      "[data-role='quiz-link']",
+      "[data-role='quiz-item']"
+    ],
+    "title": [
+      "[data-role='page-title']",
+      "[data-role='quiz-title']",
+      "title"
+    ],
+    "content": [
+      "[data-role='page-content']"
+    ],
+    "course_name": [
+      "[data-role='course-name']",
+      "[data-role='meta-quiz-info']"
+    ],
+    "question_count": [
+      "[data-role='question-count']",
+      "[data-role='meta-quiz-info']"
+    ],
+    "duration": [
+      "[data-role='duration']",
+      "[data-role='meta-quiz-info']"
+    ],
+    "price": [
+      "[data-role='price']",
+      "[data-role='meta-quiz-info']"
+    ],
+    "description": [
+      "[data-role='description']",
+      "[data-role='meta-quiz-info']"
+    ]
+  },
+  "pagination_selector": [
+    "[data-role='next-link']"
+  ],
+  "allowed_domains": [
+    "entrancegateway.com"
+  ],
+  "detail_url_keywords": [
+    "/quiz/"
+  ],
+  "include_patterns": [
+    "https://entrancegateway\\.com/quiz"
+  ],
+  "exclude_patterns": [
+    "/signin",
+    "/signup"
+  ],
+  "render_mode": "http",
+  "max_pages": null,
+  "max_depth": 3,
+  "request_delay_seconds": 0.4,
+  "tailwind_optimized": true
+}

@@ -1,0 +1,66 @@
+{
+  "name": "entrancegateway_blogs",
+  "base_url": "https://entrancegateway.com/",
+  "start_urls": [
+    "https://entrancegateway.com/blogs?page=1"
+  ],
+  "doc_type": "blog",
+  "metadata_fields": [
+    "category",
+    "published_date",
+    "description",
+    "read_time"
+  ],
+  "selectors": {
+    "list_links": [
+      "[data-role='blog-link']",
+      "[data-role='blog-item']"
+    ],
+    "title": [
+      "[data-role='page-title']",
+      "[data-role='blog-title']",
+      "title"
+    ],
+    "content": [
+      "[data-role='page-content']",
+      "[data-role='article-content']"
+    ],
+    "category": [
+      "[data-role='category']",
+      "[data-role='meta-blog-info']"
+    ],
+    "published_date": [
+      "[data-role='published-date']",
+      "[data-role='meta-blog-info']"
+    ],
+    "description": [
+      "[data-role='description']",
+      "[data-role='meta-blog-info']"
+    ],
+    "read_time": [
+      "[data-role='read-time']",
+      "[data-role='meta-blog-info']"
+    ]
+  },
+  "pagination_selector": [
+    "[data-role='next-link']"
+  ],
+  "allowed_domains": [
+    "entrancegateway.com"
+  ],
+  "detail_url_keywords": [
+    "/blogs/"
+  ],
+  "include_patterns": [
+    "https://entrancegateway\\.com/blogs"
+  ],
+  "exclude_patterns": [
+    "/signin",
+    "/signup"
+  ],
+  "render_mode": "http",
+  "max_pages": null,
+  "max_depth": 3,
+  "request_delay_seconds": 0.4,
+  "tailwind_optimized": true
+}

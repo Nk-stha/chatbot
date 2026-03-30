@@ -1,0 +1,75 @@
+{
+  "name": "entrancegateway_notes",
+  "base_url": "https://entrancegateway.com/",
+  "start_urls": [
+    "https://entrancegateway.com/notes?page=1"
+  ],
+  "doc_type": "note",
+  "metadata_fields": [
+    "course_code",
+    "course_name",
+    "semester",
+    "year",
+    "affiliation",
+    "description"
+  ],
+  "selectors": {
+    "list_links": [
+      "[data-role='note-link']",
+      "[data-role='note-item']"
+    ],
+    "title": [
+      "[data-role='page-title']",
+      "[data-role='note-title']",
+      "title"
+    ],
+    "content": [
+      "[data-role='page-content']"
+    ],
+    "course_code": [
+      "[data-role='course-code']",
+      "[data-role='meta-note-info']"
+    ],
+    "course_name": [
+      "[data-role='course-name']",
+      "[data-role='meta-note-info']"
+    ],
+    "semester": [
+      "[data-role='semester']",
+      "[data-role='meta-note-info']"
+    ],
+    "year": [
+      "[data-role='year']",
+      "[data-role='meta-note-info']"
+    ],
+    "affiliation": [
+      "[data-role='affiliation']",
+      "[data-role='meta-note-info']"
+    ],
+    "description": [
+      "[data-role='description']",
+      "[data-role='meta-note-info']"
+    ]
+  },
+  "pagination_selector": [
+    "[data-role='next-link']"
+  ],
+  "allowed_domains": [
+    "entrancegateway.com"
+  ],
+  "detail_url_keywords": [
+    "/notes/"
+  ],
+  "include_patterns": [
+    "https://entrancegateway\\.com/notes"
+  ],
+  "exclude_patterns": [
+    "/signin",
+    "/signup"
+  ],
+  "render_mode": "http",
+  "max_pages": null,
+  "max_depth": 3,
+  "request_delay_seconds": 0.4,
+  "tailwind_optimized": true
+}

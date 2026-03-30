@@ -1,0 +1,93 @@
+{
+  "name": "entrancegateway_trainings",
+  "base_url": "https://entrancegateway.com/",
+  "start_urls": [
+    "https://entrancegateway.com/trainings?page=1"
+  ],
+  "doc_type": "training",
+  "metadata_fields": [
+    "training_status",
+    "category",
+    "training_type",
+    "duration",
+    "price",
+    "capacity",
+    "location",
+    "description"
+  ],
+  "selectors": {
+    "list_links": [
+      "[data-role='training-link']",
+      "[data-role='training-item']"
+    ],
+    "title": [
+      "[data-role='page-title']",
+      "[data-role='training-name']",
+      "title"
+    ],
+    "content": [
+      "[data-role='page-content']"
+    ],
+    "training_status": [
+      "[data-role='training-status']",
+      "[data-role='meta-training-info']",
+      "[data-role='meta-training-sidebar']"
+    ],
+    "category": [
+      "[data-role='category']",
+      "[data-role='meta-training-info']",
+      "[data-role='meta-training-sidebar']"
+    ],
+    "training_type": [
+      "[data-role='training-type']",
+      "[data-role='meta-training-info']",
+      "[data-role='meta-training-sidebar']"
+    ],
+    "duration": [
+      "[data-role='duration']",
+      "[data-role='meta-training-info']",
+      "[data-role='meta-training-sidebar']"
+    ],
+    "price": [
+      "[data-role='price']",
+      "[data-role='meta-training-info']",
+      "[data-role='meta-training-sidebar']"
+    ],
+    "capacity": [
+      "[data-role='capacity']",
+      "[data-role='meta-training-info']",
+      "[data-role='meta-training-sidebar']"
+    ],
+    "location": [
+      "[data-role='location']",
+      "[data-role='meta-training-info']",
+      "[data-role='meta-training-sidebar']"
+    ],
+    "description": [
+      "[data-role='description']",
+      "[data-role='meta-training-info']",
+      "[data-role='meta-training-sidebar']"
+    ]
+  },
+  "pagination_selector": [
+    "[data-role='next-link']"
+  ],
+  "allowed_domains": [
+    "entrancegateway.com"
+  ],
+  "detail_url_keywords": [
+    "/trainings/"
+  ],
+  "include_patterns": [
+    "https://entrancegateway\\.com/trainings"
+  ],
+  "exclude_patterns": [
+    "/signin",
+    "/signup"
+  ],
+  "render_mode": "http",
+  "max_pages": null,
+  "max_depth": 3,
+  "request_delay_seconds": 0.4,
+  "tailwind_optimized": true
+}
